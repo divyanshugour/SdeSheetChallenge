@@ -1,0 +1,16 @@
+class Solution:
+    def setZeroes(self, mat: List[List[int]]) -> None:
+        row = len(mat)
+        col = len(mat[0])
+        z_r = [False]*row
+        z_c = [False]*col
+        for i in range(row):
+            for j in range(col):
+                if mat[i][j] == 0:
+                    z_r[i] = True
+                    z_c[j] = True
+        for r in range(row):
+            for c in range(col):
+                if z_r[r] or z_c[c]:
+                    mat[r][c]=0
+                
